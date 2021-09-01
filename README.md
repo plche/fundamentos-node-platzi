@@ -1,2 +1,2 @@
 # fundamentos-node-platzi
-Código del Curso de Fundamentos de Node.js en Platzi
+Código desarrollado en el Curso de Fundamentos de Node.js en Platzi.
