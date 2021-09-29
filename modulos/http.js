@@ -1,3 +1,5 @@
+// Podemos hacer uso del debugger (inspector) de Node.js, mediante la bandera (--inspect, Ej.: node --inspect modulos/http.js) al momento de ejecutar nuestro código, y luego podemos emplear las DevTools de Google Chrome para apoyarnos en la depuración.
+
 // El módulo HTTP de Node.js permite crear un servidor. Tiene todo lo necesario para crear un sistema de rutas (en base a las URLs), que responderá a cada ruta especificada, las cabeceras (Response Headers) que podrá enviar, etc.
 // El método createServer() de este modulo nos permitirá abrir un puerto para crear el servidor y escuchar las peticiones en él.
 const http = require('http');
@@ -12,8 +14,9 @@ function router(req, res) {
 
 	switch (req.url) {
 		case '/hola':
+			let saludo = hola();
 			res.writeHead(201, {'Content-Type': 'text/plain; charset=utf-8'});
-			res.write('Hola, qué tal');
+			res.write(saludo);
 			res.end();
 			break;
 	
@@ -32,6 +35,10 @@ function router(req, res) {
 
   // Para terminar la petición
 	/* res.end(); */
+}
+
+function hola() {
+	return 'Hola, qué tal';
 }
 
 console.log(`Escuchando http en el puerto ${puerto}`);
